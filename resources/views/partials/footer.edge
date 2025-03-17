@@ -1,0 +1,48 @@
+<footer class="bg-[#374151] text-[#e5e7eb] items-center">
+    <div class="flex flex-col w-full h-fit px-14 py-8">
+        <div class="flex flex-row">
+            {{-- Logo and Icon social medias --}}
+            <div class="flex flex-col gap-2 justify-center w-[35%] w-[35%]">
+                <div class="flex items-center w-full gap-4">
+                    <img alt="Logo Preview" src="{{ asset('resources/images/Blogoss-logo.png') }}" width="120">
+                    <!---->
+                    <div class="text-5xl  font-bold text-[#e5e7eb]">Blogoss</div>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+            {{-- menu --}}
+            <div class="flex flex-row w-[65%] justify-end gap-16 text-nowrap">
+                <div class="grid grid-cols-1 gap-24">
+                    <!---->
+                    <div class="flex flex-col gap-2">
+                        <div class="font-bold uppercase text-[#9ca3af] pb-3">Comany</div> 
+                        <a href="/" class="hover:underline">Home</a>
+                        <a href="/about" class="hover:underline">About Us</a>
+                        <a href="/services" class="hover:underline">Services</a>
+                        <a href="/blog" class="hover:underline">Blog</a>
+                        <a href="/contact" class="hover:underline">Contact</a>  
+                    </div>
+                    <!---->
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold uppercase text-[#9ca3af] pb-3">Newsletter</div>
+                    <p class="text-[#e5e7eb] mb-2">Subscribe to our newsletter.</p>
+                    <form class="flex items-center">
+                        <input type="email" name="email" placeholder="Enter your email"
+                            class="w-full bg-gray-100 text-gray-700 rounded-l-lg py-3 px-4 focus:outline-hidden focus:ring-purple-600 focus:border-transparent"
+                            autocomplete="off" required="">
+                        <button type="submit"
+                            class="bg-emerald-600 hover:bg-emerald-700 text-[#ffffff] font-semibold py-3 px-6 rounded-r-lg transition-colors duration-300">Subscribe</button>
+                    </form>
+                </div>
+                <!---->
+            </div>
+        </div>
+        <!---->
+    </div>
+    <div class="px-14 py-4">
+        <div class="w-full border-t border-gray-500 my-5"></div>
+        <div class="text-center">© 2025 Blogoss - All rights reserved.</div>
+    </div>
+</footer>

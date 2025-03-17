@@ -1,0 +1,28 @@
+@component('layouts/frontoffice')
+@slot('title')
+<title>
+  Blogoss - {{ pageTitle }}
+</title>
+@endslot
+  
+@slot('meta')
+<meta name="description" content="{{ pageDescription }}">
+@endslot
+
+@slot('main')
+<main>
+  <div class="bg-sand-1">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div class="">
+        <h1 class="text-4xl font-extrabold sm:text-5xl md:text-6xl">
+          About us
+        </h1>
+        <p class="mt-4 text-lg leading-6">
+          A fullstack Node.js framework for building scalable and performant applications.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+@endslot
+@end
