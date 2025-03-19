@@ -3,7 +3,7 @@ import { createUserValidator } from '#validators/user'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class AuthController {
-  public async loginPage({ view }: HttpContext) {
+  public async showLoginPage({ view }: HttpContext) {
     return view.render('pages/auth/login', {
       pageTitle: 'Login',
       pageDescription: 'Login to your account',
@@ -16,7 +16,7 @@ export default class AuthController {
       const user = await User.verifyCredentials(email, password)
       await auth.use('web').login(user)
       session.flash('success', 'Login successful')
-      return response.redirect().toRoute('home')
+      return response.redirect().toRoute('show.user.profile.page')
     } catch (error) {
       session.flash('notification', {
         type: 'error',
@@ -26,7 +26,7 @@ export default class AuthController {
     }
   }
 
-  public async registerPage({ view }: HttpContext) {
+  public async showRegisterPage({ view }: HttpContext) {
     return view.render('pages/auth/register', {
       pageTitle: 'Register',
       pageDescription: 'Create an account',
@@ -39,18 +39,15 @@ export default class AuthController {
       const user = await User.create(data)
       await auth.use('web').login(user)
       session.flash('success', 'User registered successfully')
-      return response.redirect().toRoute('home')
+      return response.redirect().toRoute('show.user.profile.page')
     } catch (error) {
-      session.flash('notification', {
-        type: 'error',
-        message: error.message || 'An error occurred. Please try again.',
-      })
+      session.flash('error', 'An error occurred. Please try again.')
       return response.redirect().back()
     }
   }
 
   async logout({ auth, response }: HttpContext) {
     await auth.use('web').logout()
-    return response.redirect().toRoute('show.login.page')
+    return response.redirect().toRoute('show.home.page')
   }
 }

@@ -16,7 +16,7 @@
       <div class="">
         <div class="py-4 text-center">
           <h1 class="text-4xl font-extrabold sm:text-5xl md:text-6xl">
-            Sign in
+            Login
           </h1>
         </div>
         <div class="py-4">
@@ -27,12 +27,12 @@
                 <img src="{{ asset('resources/images/Blogoss-logo-dark.png') }}" alt="Logo" width="50">
               </div>
             </div>
-            <div class="text-sm font-light text-[#6B7280] pb-8 text-center">Create your account on Blogoss.</div>
+            <div class="text-sm font-light text-[#6B7280] pb-8 text-center">Login on Blogoss.</div>
             <!---->
-            <form class="flex flex-col" action="/login" method="post">
+            <form class="flex flex-col" action="{{ route('login') }}" method="post">
               {{ csrfField() }}
               {{--  --}}
-              <div class="pb-6">
+              <div class="pb-2">
                 <label for="email" class="block mb-2 text-sm font-medium">Email</label>
                 <div class="relative text-gray-400">
                   <span class="absolute inset-y-0 left-0 flex items-center p-1 pl-3">
@@ -50,7 +50,7 @@
                 </div>
               </div>
               {{--  --}}
-              <div class="pb-2">
+              <div class="pb-6">
                 <label for="password" class="block mb-2 text-sm font-medium">Password</label>
                 <div class="relative text-gray-400">
                   <span class="absolute inset-y-0 left-0 flex items-center p-1 pl-3">
@@ -71,13 +71,13 @@
               {{--  --}}
               <button type="submit"
                 class="w-full text-[#FFFFFF] bg-[#374151] focus:ring-4 focus:outline-hidden focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6">
-                Sign in
+                Login
               </button>
-              {{-- <div class="text-sm font-light text-[#6B7280] text-center">
-                Don't have an accout yet? <a href="#"
-                  class="font-medium text-[#4F46E5] hover:underline">Sign Up</a>
+              <div class="text-sm font-light text-[#6B7280] text-center">
+                Don't have an accout yet? <a href="{{ route('show.register.page') }}"
+                  class="font-medium text-[#4F46E5] hover:underline">Please register here.</a>
           
-              </div> --}}
+              </div>
             </form>
             <!---->
           </div>

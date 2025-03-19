@@ -47,11 +47,11 @@
                   <td class=" py-5 border border-gray-200   p-4" contenteditable="true">{{ user.email }}</td>
                   <td class=" py-5 border border-gray-200   p-4" contenteditable="true">{{ user.role.roleName }}</td>
                   <td class=" py-5 border border-gray-200   p-4">
-                    <a href="/user/{{ user.id }}" class="text-blue-500 hover:text-blue-700">View</a>
+                    <a href="{{ route('show.user.profile.page',{id:user.id}) }}" class="text-blue-500 hover:text-blue-700">View</a>
                     <br>
-                    <a href="/user/{{ user.id }}/edit" class="text-blue-500 hover:text-blue-700">Edit</a>
+                    <a href="{{ route('show.edit.user.page',{id:user.id}) }}" class="text-blue-500 hover:text-blue-700">Edit</a>
                     <br>
-                    <a href="/user/{{ user.id }}/delete" class="text-red-500 hover:text-red-700">Delete</a>
+                    <a href="{{ route('delete.user',{id:user.id}) }}" class="text-red-500 hover:text-red-700">Delete</a>
                   </td>
                   <!--]-->
                 </tr>

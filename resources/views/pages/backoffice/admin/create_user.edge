@@ -29,7 +29,7 @@
             </div>
             <div class="text-sm font-light text-[#6B7280] pb-8 text-center">Create your account on Blogoss.</div>
             <!---->
-            <form class="flex flex-col" action="/user/store" method="post">
+            <form class="flex flex-col" action="{{ route('store.user') }}" method="post">
               {{ csrfField() }}
               {{--  --}}
               <div class="pb-2">
